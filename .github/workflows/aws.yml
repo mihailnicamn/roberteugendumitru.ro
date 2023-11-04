@@ -10,8 +10,15 @@ jobs:
       name: Build
       runs-on: ubuntu-latest
       steps:
-      - name: copy files to server
-        run: ls -a
+      - name: sync
+        uses: nogsantos/scp-deploy@master
+        with:
+            src: ./*
+            host: ${{ secrets.SSHHOST }}
+            remote: ${{ secrets.SSHPATH }}
+            port: ${{ secrets.SSHPORT }}
+            user: ${{ secrets.SSHUSER }}
+            key: ${{ secrets.SSHKEY }}
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.0.0
         with:
