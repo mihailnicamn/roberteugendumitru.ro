@@ -1,4 +1,9 @@
 name: test-aws
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
 uses: appleboy/ssh-action@v1.0.0
 with:
   host: ${{ secrets.SSHHOST }}
