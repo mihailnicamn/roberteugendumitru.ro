@@ -17,4 +17,4 @@ jobs:
           username: ${{secrets.SSHUSER}}
           key: ${{secrets.SSHKEY}}
           port: ${{secrets.SSHPORT}}
-          script: whoami
+          script: bash ./scripts/ssh.sh && bash ./scripts/deploy.sh
