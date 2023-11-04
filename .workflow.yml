@@ -1,4 +1,4 @@
-name: executing remote ssh commands using ssh key
+name: test-aws
 uses: appleboy/ssh-action@v1.0.0
 with:
   host: ${{ secrets.SSHHOST }}
