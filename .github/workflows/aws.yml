@@ -17,7 +17,7 @@ jobs:
           username: ${{secrets.SSHUSER}}
           key: ${{secrets.SSHKEY}}
           port: ${{secrets.SSHPORT}}
-          source: "**/*"
+          source: "*"
           target: "/root/app"
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.0.0
