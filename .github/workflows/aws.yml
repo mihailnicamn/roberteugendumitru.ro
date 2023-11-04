@@ -11,7 +11,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - name: copy files to server
-        run: bash ./scripts/ssh.sh
+        run: ls -a
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.0.0
         with:
