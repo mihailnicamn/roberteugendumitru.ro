@@ -3,7 +3,7 @@ module.exports = {
         {
             "name": "my-app",
             "script": "npm",
-            "args": "start",
+            "args": "prod",
             "instances": 1,
         }
     ]
