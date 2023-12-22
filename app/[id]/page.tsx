@@ -11,7 +11,7 @@ const project=projects.find(({name:pid})=>{
  return ids.that===ids.this
 }) as any;
   return (
-    <main className="flex min-h-screen items-center justify-between p-24">
+    <main className="flex min-h-screen items-center justify-between p-24 bg-[#bcada3]">
         <div className="flex md:flex-row">
           <div className="w-full md:w-1/2">
             <div className="image-gallery">
@@ -22,9 +22,11 @@ const project=projects.find(({name:pid})=>{
               ))}
             </div>
           </div>
-          <div className="hidden md:block w-1/2 p-4 fixed top-100 right-0 h-full overflow-y-auto bg-cream">
+          <div className="hidden md:block w-1/2 p-4 fixed top-100 right-0 h-full overflow-y-auto bg-[#bcada3]">
             <h2>{project.name}</h2>
             <p>{project.description}</p>
+            <p>{project.pj}</p>
+            <p>{project.ph}</p>
             <p>{project.type}</p>
             <p>{project.size}</p>
             <p>{project.location}</p>
