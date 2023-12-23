@@ -1,29 +1,24 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import projects from '@/stuff/projects';
-const sanitize= (str:string)=>str.toLowerCase().trim().replaceAll(' ','')
 
-export default async function Home() {
-  console.log(projects);
+const sanitize = (str: string) => str.toLowerCase().trim().replaceAll(' ', '');
+
+export default function Home() {
+  const projectsPerPage = 3;
 
   return (
     <main className="flex min-h-screen items-center justify-between p-24 bg-[#bcada3]">
       {projects.map((project, index) => (
-        <div key={`project-${index}`} className="flex md:flex-row">
-         
-          <div className="hidden md:block w-1/2 p-4 right-0 h-full overflow-y-auto ">
-            <h2>{project.name}</h2>
-            <p>{project.description}</p>
-            <p>{project.pj}</p>
-            <p>{project.ph}</p>
-            <p>{project.type}</p>
-            <p>{project.size}</p>
-            <p>{project.location}</p>
-            <p>{project.status}</p>
-            <a href={`/${sanitize(project.name)}`}>project.name</a>
-            <div className="mt-11">
-              <Image src="/projects/avl.png" height={100} width={200} alt="plan" />
+        <div key={`project-${index}`} className={`w-full md:w-1/3 mb-8 ${index % projectsPerPage === 2 ? 'md:mb-0' : ''}`}>
+          <Link href={`/${sanitize(project.name)}`}>
+            <div style={{ cursor: 'pointer' }}>
+              <div className="mb-10">
+                <Image src={project.images[0]} height={300} width={400} alt={`Image ${index}`} />
+              </div>
+              <h2>{project.name}</h2>
             </div>
-          </div>
+          </Link>
         </div>
       ))}
     </main>
