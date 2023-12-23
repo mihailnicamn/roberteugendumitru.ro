@@ -1,24 +1,29 @@
 import Link from 'next/link';
 
-const Navbar = () => {
+export const Navbar = () => {
   return (
-    <nav className="bg-gray-800 p-4">
+    <nav className="bg-[#e4e1dd] text-black p-4">
       <div className="container mx-auto flex items-center justify-between">
         <div>
-          <Link href="/">
-            <a className="text-white text-xl font-bold">Robert-Eugen Dumitru</a>
+          <Link className="text-xl font-bold" href="/">            
+          Robert-Eugen Dumitru
           </Link>
         </div>
-        <div className="space-x-4">
-          <Link href="/projects">
-            <a className="text-white">Projects</a>
-          </Link>
+        <div className="flex flex-col gap-2">
+          <div className='mx-2'>
+            <Link href="/projects">
+           Projects
+          </Link></div>       
+          <div className='mx-2'>
           <Link href="/about">
-            <a className="text-white">About</a>
+            About            
           </Link>
+          </div>
+          <div className='mx-2'>
           <Link href="/contact">
-            <a className="text-white">Contact</a>
+            Contact
           </Link>
+          </div>
         </div>
       </div>
     </nav>

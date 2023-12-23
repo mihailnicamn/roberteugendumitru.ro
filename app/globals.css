@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -25,3 +26,87 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+}
+
+.fade-in {
+  text-align: center;
+  animation: fade-in 1s ease-in-out;
+  opacity : 1;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+.fade-out {
+  text-align: center;
+  animation: fade-out 1s ease-in-out;
+}
+
+@keyframes image-overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.image-overlay-in {
+  animation: image-overlay-in 1s ease-in-out;
+}
+
+@keyframes image-overlay-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.image-overlay-out {
+  animation: image-overlay-out 1s ease-in-out;
+}
+
+/* 
+._img when hovered over, the image will have dark overlay
+*/
+._img {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+._img:hover .image-overlay {
+  opacity: 1;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.5s ease-in-out;
+}
+
+
+
+
